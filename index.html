@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Week8</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <div class='opening'>
+        <div class='star'>
+            <div class='star__top'></div>
+            <div class='star__bottom'></div>
+        </div>
+        <div class='square'>
+        </div>
+        <div class='circle'>
+        </div>
+        <div class='text-block'>
+            <div class='text-block__title'>GEOMETRY PERSON</div>
+            <div class='text-block__desc'>find your core personality type in shapes!</div>
+        </div>
+    </div>
+
+    <div class='screenQ1'>
+      <div class='text-block'>
+          <div class='text-block__title'>GEOMETRY PERSON</div>
+          <div class='text-block__desc'>find your core personality type in shapes!</div>
+      </div>
+      <div class='q-section'>
+        <div class='q-section__wrapper'>
+          <div class="q-section__number">
+              Q1
+          </div>
+          <div class='q-section__title'>
+              If one day you get a gift that can change the rule of the world, which ability will you choose? 
+          </div>
+          <div class='q-section__desc'>
+            Choose the answer appeared in your mind instantly
+          </div>
+          <ul class='q-section__options'>
+              <li data-value="1">Destroy all humans in the world</li>
+              <li data-value="2">Make the war never happened</li>
+              <li data-value="3">You won’t get old and live forever</li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="animate-section">
+          <div class='animate-section__square'></div>
+          <div class='animate-section__triangle'></div>
+          <div class='animate-section__circle'></div>
+      </div>
+    </div>
+
+    <div class='screenQ2'>
+        <div class='q-section'>
+          <div class='q-section__wrapper'>
+            <div class='q-section__number'>
+                Q2
+            </div>
+            <div class='q-section__title'>
+                Imagine you’re almost late, but totally lost at a foked road. Which way do you prefer to go?
+            </div>
+            <div class='q-section__desc'>
+                Choose the answer appeared in your mind instantly
+            </div>
+            <ul class='q-section__options'>
+                <li data-value='1'>The left one</li>
+                <li data-value='2'>The right one</li>
+                <li data-value='3'>Open Google Map</li>
+            </ul>
+          </div>
+        </div>
+        <div class='animate-section'>
+            <div class='animate-section__square'></div>
+            <div class='animate-section__triangle'></div>
+            <div class='animate-section__circle'></div>
+        </div>
+    </div>
+
+    <div class='calculating hide'>
+        <div class='text-block'>
+            <div class='text-block__title'>You are...</div>
+            <div class='text-block__desc'>Keep scrolling to show the result</div>
+        </div>
+
+        <div class='trigger1' style='position:relative;top: 100vh'>  
+            
+        </div>
+
+        <div class='trigger2' style='position:relative;top: 200vh'>  
+            
+        </div>
+
+        <div class='trigger3' style='position:relative;top: 300vh'>  
+            
+        </div>
+
+        <div class='trigger4' style='position:relative;top: 400vh'>  
+            
+        </div>
+    </div>
+
+    <div class='screenResult hide'>
+        <div class='screenResult__text invisible'>Your personality is</div>
+        <div class='screenResult__ans invisible'>TRIANGLE</div>
+        <div class='tri triangle1'></div>
+        <div class='tri triangle2'></div>
+        <div class='tri triangle3'></div>
+        <div class='tri triangle4'></div>
+        <div class='tri triangle5'></div>
+        <div class='tri triangle6'></div>
+        <div class='tri triangle7'></div>
+        <div class='triangle-blue'></div>
+        <div class='triangle-white'></div>
+        <div class='triangle-black'></div>
+        <div class='screenResult__result invisible'>
+            <div class='screenResult__per'>
+                AGGRESSIVE
+            </div>
+            <div class='screenResult__per'>
+                INDEPENDENT
+            </div>
+            <div class='screenResult__per'>
+                SELF-MOTIVATED
+            </div>
+            <div class='screenResult__desc'>
+                The triangle type people are natural-born leaders, full of passion and motivation,  trying to fix their mistakes as they go.
+            </div>
+            <div class='screenResult__btn' onclick="location.reload()">
+                TRY AGAIN
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src='./script.js'></script>
+  </body>
+</html>

@@ -1,0 +1,411 @@
+light-blue = #1469ff
+deep-blue = #0027c8
+pink = #ff3c82
+
+center()
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+.invisible {
+  opacity: 0;
+}
+
+.hide {
+  display: none !important;
+}
+
+html, body {
+  margin: 0
+  font-family: 'Roboto'
+  color: white
+}
+
+body {
+  overflow: hidden
+}
+
+.opening {
+  width: 100vw
+  height: 100vh
+  background: light-blue
+}
+
+star-top()
+  width: 235px
+  border-top: 135px solid pink
+  border-left: 80px solid transparent
+  border-right: 80px solid transparent
+  position: relative
+
+star-before()
+  top: -194px
+  content: ''
+  position: absolute
+  left: calc(50% - 40px)
+  border-left: 40px solid transparent
+  border-right: 40px solid transparent
+  border-bottom: 60px solid pink
+
+
+.star {
+  center()
+  z-index: 10
+  &__top {
+    star-top()
+    
+    &:before {
+      star-before()
+    }
+  }
+  
+  &__bottom {
+    star-top()
+    transform: rotate(180deg)
+    &:before {
+      star-before()
+    }
+  }
+}
+
+.circle {
+  center()
+  width: 500px
+  height: 500px
+  z-index: 9
+  border-radius: 50%
+  background: deep-blue
+}
+
+.square {
+  center()
+  width: 400px
+  height: 400px
+  z-index: 8
+  background: black
+}
+
+.text-block {
+  center()
+  z-index: 20
+  text-align: center
+  
+  &__title {
+    font-weight: 700
+    font-size: 64px
+  }
+  
+  &__desc {
+    font-size: 24px
+    margin-top: 20px
+  }
+}
+
+.screenQ1 {
+  width: 100vw
+  height: 100vh
+  background: pink
+  position: relative
+  transition: background 0.5s
+  
+  .q-section {
+    opacity: 0
+  }
+  
+  .animate-section {
+    left: 100%
+  }
+}
+
+.q-section {
+  background: light-blue
+  height: 100%
+  width: 60%
+  
+  &__wrapper {
+    width: 380px
+    padding: 40px 30px
+  }
+  
+  &__number {
+    font-weight: 700
+    font-size: 64px
+    margin-bottom: 20px
+    color: pink
+  }
+  
+  &__title {
+    font-size: 36px
+    font-weight: 700
+    line-height: 48px
+    margin-bottom: 20px
+  }
+  
+  &__desc {
+    color: deep-blue
+    font-size: 24px
+    line-height: 1.5em
+    margin-bottom: 30px
+  }
+  
+  &__options {
+    list-style: none
+    padding: 0
+    
+    li {
+      margin: 0
+      padding: 10px 30px
+      border: 2px solid
+      border-radius: 30px
+      margin-bottom: 10px
+      font-size: 20px
+      text-align: center
+      cursor: pointer
+      transition: all 0.4s
+      
+      &:hover {
+        background: white
+        color: light-blue
+      }
+    }
+  }
+}
+
+.animate-section {
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 60%
+  background: deep-blue
+  
+  &__square {
+    width: 200px
+    height: 200px
+    background: pink
+    position: absolute
+    top: 100vh
+    left: 50px
+  }
+  
+  &__triangle {
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 0px 70px 120px 70px
+    border-color: transparent transparent white transparent
+    position: absolute
+    top: calc(100vh + 100px)
+    right: -20px
+  }
+  
+  &__circle {
+    width: 400px
+    height: 400px
+    border-radius: 50%
+    background: black
+    position: absolute
+    bottom: -900px
+    right: -50px
+  }
+}
+
+.screenQ2 {
+  width: 100vw
+  height: 100vh
+  position: relative
+  background: deep-blue
+  
+  .q-section {
+    position: absolute
+    right: 0
+    background: deep-blue
+    opacity: 0
+  }
+  
+  .animate-section {
+    left: 0
+    right: 60%
+    background: pink
+    
+    &__square {
+      width: 300px
+      height: 300px
+      transform: rotate(40deg)
+      background: light-blue
+      bottom: -400px
+      top: unset
+      left: -170px
+    }
+    
+    &__triangle {
+      border-width: 0px 150px 250px 150px;
+      top: 120vh;
+      left: 100px;
+      transform: rotate(25deg)
+    }
+    
+    &__circle {
+      width: 200px
+      height: 200px
+      left: 70px
+      bottom: -300px
+    }
+  }
+}
+
+.calculating {
+  height: 5700px;
+  width: 100vw;
+  background: #FF3C82;
+  
+  .text-block {
+      position: fixed;
+      z-index: 20;
+      color: black;
+  }
+  
+  .small-circle {
+    border-radius: 50%
+  }
+}
+
+.screenResult {
+  width: 0;
+  height: 100vh;
+  position: relative
+  background: light-blue
+  overflow: hidden
+  
+  &__text {
+    center()
+    top: 30%
+    font-size: 24px
+  }
+  
+  &__ans { // top: 169, left: 945
+    center()
+    top: 40%
+    font-size: 64px
+    font-weight: bold
+  }
+  
+  .tri {
+    position: absolute;
+    border-style: solid;
+    border-width: 62px 36px 0px 36px;
+    border-color: deep-blue transparent transparent transparent;
+  }
+  
+  .triangle1, .triangle2, .triangle6 {
+    border-top-color: black;
+  }
+  
+  .triangle1 {
+    top: 50%
+    left: 5%
+  }
+  
+  .triangle2 {
+    top: 0
+    left: 10%
+  }
+  
+  .triangle3 {  // top: 312, left: 814
+    top: 60%
+    left: 20%
+  }
+  
+  .triangle4 {
+    top: 20%
+    left: 22%
+  }
+  
+  .triangle5 { // top: 230, left: 814
+    top: 10%
+    left: 60%
+  }
+  
+  .triangle6 {
+    top: 60%
+    left: 75%
+  }
+  
+  .triangle7 { // top: 395, left: 814
+    top: 45%
+    left: 95%
+  }
+  
+  .tri {
+    top: -100px;
+  }
+
+  .triangle-blue { // bottom:200, left: 300
+    position: absolute;
+    border-style: solid;
+    border-width: 0px 180px 300px 180px;
+    border-color: transparent transparent deep-blue transparent;
+    bottom: -400px;
+    left: 37%
+    z-index: 10
+  }
+  
+  .triangle-white { // bottom: 370, left: 326
+    position: absolute;
+    border-style: solid;
+    border-width: 0px 180px 310px 180px;
+    border-color: transparent transparent white transparent;
+    bottom: -400px;
+    left: 39%
+    z-index: 7
+  }
+  
+  .triangle-black { // bottom: 338, left: 426
+    position: absolute;
+    border-style: solid;
+    border-width: 0px 160px 270px 160px;
+    border-color: transparent transparent black transparent;
+    bottom: -400px;
+    left: 43%
+    z-index: 5
+  }
+  
+  &__result {
+    position: absolute;
+    top: 240px;
+    left: 800px;
+    width: 400px;
+  }
+  
+  &__per {
+    color: deep-blue
+    font-size: 36px
+    font-weight: bold
+    margin-bottom: 40px
+    padding-left: 100px
+  }
+  
+  &__desc {
+    margin-bottom: 40px
+    color: white
+    font-size: 20px;
+    line-height: 36px;
+  }
+  
+  &__btn {
+      padding: 10px 30px
+      border: 2px solid white
+      border-radius: 30px
+      font-size: 20px
+      text-align: center
+      cursor: pointer
+      transition: all 0.4s
+      
+    &:hover {
+      background: white
+      color: light-blue
+    }
+  }
+}
+  
